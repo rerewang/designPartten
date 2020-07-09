@@ -1,0 +1,48 @@
+@startuml
+
+interface Subject {
+    registerObserver();
+    removeObserver();
+    notifyObservers();
+}
+interface Observer {
+    update();
+}
+interface DisplayElement {
+    display();
+}
+
+class WeatherData {
+    registerObserver();
+    removeObserver();
+    notifyObservers();
+
+    measurementsChanged();
+    setMeasurements();
+}
+
+class ADisplay {
+    update();
+    display();
+}
+class BDisplay {
+    update();
+    display();
+}
+class CDisplay {
+    update();
+    display();
+}
+
+Subject <|.. WeatherData
+Observer <|.. ADisplay
+Observer <|.. BDisplay
+Observer <|.. CDisplay
+DisplayElement <|.. ADisplay
+DisplayElement <|.. BDisplay
+DisplayElement <|.. CDisplay
+
+Observer <-- Subject
+Subject <- ADisplay
+
+@enduml

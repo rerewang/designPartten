@@ -1,4 +1,4 @@
-package com.company.c1;
+package com.company.strategy;
 
 public class Quack implements QuackBehavior {
     @Override

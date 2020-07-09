@@ -1,0 +1,31 @@
+@startuml
+
+interface Subject {
+    registerObserver();
+    removeObserver();
+    notifyObservers();
+}
+interface Observer {
+    update();
+}
+
+class ConcreteSubject {
+    registerObserver();
+    removeObserver();
+    notifyObservers();
+
+    getState();
+    setState();
+}
+class ConcreteObserver {
+    update();
+    //other();
+}
+
+Subject <|.. ConcreteSubject
+Observer <|.. ConcreteObserver
+
+Observer <-- Subject
+ConcreteObserver --> ConcreteSubject
+
+@enduml
