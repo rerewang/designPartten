@@ -3,7 +3,7 @@ package com.company.observer;
 import java.util.ArrayList;
 
 public class WeatherData implements Subject {
-    private ArrayList observers;
+    private ArrayList observers = new ArrayList();
     //温度
     private float temperature;
     //湿度
